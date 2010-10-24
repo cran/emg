@@ -6,15 +6,13 @@
   estimates for mu, sigma, and lambda.
 }
 \usage{
-  emg.mle(x, lower=list(mu=-Inf, sigma=1e-6, lambda=1e-6))
+  emg.mle(x, lower=NA, upper=NA)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{ vector of observations to estimate parameters for. }
-  \item{lower}{list of lower bounds for parameters. }
-}
-\details{
-  
+  \item{lower}{list of lower bounds for parameters.}
+  \item{upper}{list of upper bounds for parameters.}
 }
 \value{
    An object of class \code{\link[stats4]{mle-class}}.
@@ -26,6 +24,5 @@
 \code{\link[emg]{emg.nllik}}
 }
 \examples{
-  y <- remg(200)
-  emg.mle(y)
+  emg.mle(remg(200))
 }

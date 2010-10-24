@@ -11,4 +11,3 @@ qemg <- function(p, mu=0, sigma=1, lambda=1)
   }
   result
 }
-

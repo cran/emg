@@ -10,8 +10,8 @@
 \tabular{ll}{
 Package: \tab emg\cr
 Type: \tab Package\cr
-Version: \tab 1.0.1\cr
-Date: \tab 2010-08-26\cr
+Version: \tab 1.0.2\cr
+Date: \tab 2010-10-24\cr
 License: \tab GPL 2.0\cr
 LazyLoad: \tab yes\cr
 }
@@ -19,8 +19,8 @@ LazyLoad: \tab yes\cr
   routine emg.mle.
 }
 \author{
-Shawn Garbett
-
+Shawn Garbett, 
+Mark Kozdoba, 
 Maintainer: Shawn Garbett <Shawn.Garbett@Vanderbilt.edu>
 }
 \references{
@@ -36,7 +36,7 @@ Maintainer: Shawn Garbett <Shawn.Garbett@Vanderbilt.edu>
 \examples{
   y <- remg(200)
   hist(y, freq=FALSE, ylim=c(0, 0.35), breaks=20)
-  x <- 1:100/100 * 8 - 3
+  x <- 1:100/100 * 11 - 3
   lines(x, demg(x))
   m <- emg.mle(y)
   sqrt(diag(m@vcov)) # Show stderr in estimate

@@ -1,0 +1,11 @@
+a3dbf2f6387820a598cb679cb8688dd5 *DESCRIPTION
+d53ce828468488422f0fcef375969388 *R/demg.R
+e7496a844404cf27b34f82a6243f2d46 *R/emg.mle.R
+3e050b9912e9846e138af2571b2b409a *R/emg.nllik.R
+f87d09cca6ada37e65fb911427df942f *R/pemg.R
+9be14d4665a4a22e9b52cf2efedff76d *R/qemg.R
+12acd5d2e7dbdce45cefbb6b229bd2b4 *R/remg.R
+93f9f1d93a46a44723a46cde785d46c3 *man/EMG.Rd
+4048f485fc43bc128560abed9e1e7503 *man/emg-package.Rd
+61bc468dbb75c76b4b06fd50b76acad9 *man/emg.mle.Rd
+ea6e9c4ff68ee6740f1aeebfb5dc83e1 *man/emg.nllik.Rd

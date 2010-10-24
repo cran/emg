@@ -1,10 +1,9 @@
+# This analytical form was contributed by Mark Kozdoba
+# N(mu, sigma^2) + Exp(lambda)
 pemg <- function(q, mu=0, sigma=1, lambda=1)
 {
-  result <- rep(NaN, length(q))
-  for(i in 1:length(q))
-  {
-    result[i] <- integrate(function(y){demg(y, mu, sigma, lambda)}, -Inf, q[i])$value
-  }
-  return(result)
-}
+  u <- (q - mu)*lambda
+  sigma1 <- lambda*sigma
 
+  pnorm(u, 0, sigma) - exp(-u + (sigma1*sigma1)/2 + log(pnorm(u, sigma1*sigma1, sigma1)))
+}
