@@ -15,9 +15,9 @@
   The distribution is a mixture of an exponential and gaussian (normal) distribution.
 }
 \usage{
-demg(x, mu = 0, sigma = 1, lambda = 1)
-pemg(q, mu = 0, sigma = 1, lambda = 1)
-qemg(p, mu = 0, sigma = 1, lambda = 1)
+demg(x, mu = 0, sigma = 1, lambda = 1, log = FALSE)
+pemg(q, mu = 0, sigma = 1, lambda = 1, lower.tail = TRUE, log.p = FALSE)
+qemg(p, mu = 0, sigma = 1, lambda = 1, lower.tail = TRUE, log.p = FALSE)
 remg(n, mu = 0, sigma = 1, lambda = 1)
 }
 \arguments{
@@ -25,9 +25,11 @@ remg(n, mu = 0, sigma = 1, lambda = 1)
   \item{p}{vector of probabilities.}
   \item{n}{number of observations. If \code{length(n) > 1}, the length
     is taken to be the number required.}
-  \item{mu}{mu value}
-  \item{sigma}{sigma value}
-  \item{lambda}{lambda value}
+  \item{mu}{mu value, the mean of the normal component. Note: this is not the mean of the distribution. The mean is mu+1/lambda}
+  \item{sigma}{sigma value, the deviation of the normal component. Note: this is not the deviation of the distribution}
+  \item{lambda}{lambda value (1/kappa), the rate of the exponential component.}
+  \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
+  \item{lower.tail}{logical; if TRUE(default), probabilities are P[X <= x] otherwise, P[X > x].}
 }
 \value{
   \code{demg} gives the density,
@@ -50,7 +52,7 @@ remg(n, mu = 0, sigma = 1, lambda = 1)
   }
   where \eqn{\mu}{mu} is the mean of the normal distribution,
   \eqn{\sigma}{sigma} the standard deviation of the normal and 
-  \eqn{\lambda}{lambda} rate of the exponential.
+  \eqn{\lambda}{lambda} rate of the exponential. Note \eqn{\mu}{mu} does not represent the mean of the distribution. The mean is \eqn{\mu + 1/\lambda}{mu+1/lambda}
 }
 \seealso{
   \code{\link[stats]{runif}} and \code{\link[base]{.Random.seed}} about random number

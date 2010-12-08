@@ -7,7 +7,7 @@ emg.mle <- function(x, lower=NA, upper=NA)
    }
    if(is.na(upper))
    {
-     upper <- list(mu=max(x), sigma=max(x)-min(x), lambda=100/mean(x))
+     upper <- list(mu=max(x), sigma=(max(x)-min(x))/4, lambda=100/mean(x))
    }
   
    mle(function(mu, sigma, lambda){
