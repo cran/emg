@@ -11,7 +11,7 @@ pemg <- function (q, mu = 0, sigma = 1, lambda = 1, lower.tail = TRUE, log.p = F
            exp(-u + (sigma1 * sigma1)/2 + 
                pnorm(u, sigma1 * sigma1, sigma1, log.p=TRUE) )
     
-    p <- if(!lower.tail) {p} else {1-p}
+    p <- if(lower.tail) {p} else {1-p}
     
     if(log.p) {log(p)} else {p}
 }
